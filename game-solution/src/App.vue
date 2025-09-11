@@ -1,23 +1,16 @@
 <template>
     <div class="app">
-        <my-button>Загрузить фото</my-button>
-        <flask-desk class="flask-desk" :flasks="flasks" :capacity="4" />
+        <bot-link />
+        <h1>Загрузи фото головоломки и получи пошаговое решение</h1>
+        <add-photo />
+        <flask-player class="flask-desk" :capacity="4" />
+        <div class="layout"></div>
     </div>
     
 </template>
 
 <script>
-import mockSolution from './mocks/solution.mock.json'
-import { stepFlasksToArray } from './utils/solution.ts'
-
-export default {
-    data() {
-        const step0 = mockSolution.solution.step_0
-        return {
-            flasks: stepFlasksToArray(step0)
-        }
-    }
-}
+export default {}
 </script>
 
 <style>
@@ -34,8 +27,23 @@ export default {
     width: 100vw;
     height: 100vh;
     background: linear-gradient(to right, #211F1F, #323144);
+    gap: 20px;
+    position: relative;
+    overflow-x: hidden; /* предотвратить горизонтальный скролл */
+    color: #fff;
 }
 .flask-desk {
-    max-width: 500px;
+    width: 100%;
+    height: 50%;
 }
+    .layout {
+        width: 30%;
+        height: 50%;
+        background-image: url('./components/images/скарлет.svg');
+        background-size: cover;
+        position: absolute;
+        bottom: 0;
+        right: 0; 
+        transform: translateX(25%);
+    }
 </style>

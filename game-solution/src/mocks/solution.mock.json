@@ -2,7 +2,7 @@
     "steps": 3,
     "solution": {
         "step_0": {
-            "title": "Начальное состояние",
+            "title": "Шаг 1: Начальное состояние",
             "move": null,
             "flasks": {
                 "0": [
@@ -13,17 +13,131 @@
                 ],
                 "1": [
                     "GREEN",
+                    "BLUE"
+                ],
+                "2": [
+                    "PURPLE",
+                    "GREEN"
+                ],
+                "3": [
+                    "PURPLE",
+                    "GREEN",
+                    "PINK",
+                    "BLUE"
+                ],
+                "4": [
+                    "PINK",
+                    "BLUE"
+                ],
+                "5": [
+                    "PURPLE",
+                    "GREEN",
+                    "PINK",
+                    "BLUE"
+                ],
+                "6": [
+                    "PURPLE",
+                    "GREEN",
+                    "PINK",
+                    "BLUE"
+                ],
+                "7": []
+            }
+        },
+        "step_1": {
+            "title": "Шаг 2",
+            "move": null,
+            "flasks": {
+                "0": [
+                    "PINK",
+                    "GREEN"
+                ],
+                "1": [
+                    "GREEN",
                     "BLUE",
                     "PINK",
                     "GREEN"
                 ],
                 "2": [
                     "PURPLE",
+                    "GREEN"
+                ],
+                "3": [
+                    "PURPLE",
+                    "PINK",
+                    "BLUE"
+                ],
+                "4": [
+                    "PURPLE",
                     "GREEN",
                     "PINK",
                     "BLUE"
                 ],
-                "3": []
+                "5": [
+                    "PURPLE",
+                    "GREEN",
+                    "PINK",
+                    "BLUE"
+                ],
+                "6": [
+                    "PURPLE",
+                    "GREEN",
+                    "PINK",
+                    "BLUE"
+                ],
+                "7": [
+                    "PURPLE",
+                    "GREEN",
+                    "PINK",
+                    "BLUE"
+                ]
+            }
+        },
+        "step_2": {
+            "title": "Шаг 3",
+            "move": null,
+            "flasks": {
+                "0": [
+                    "PINK",
+                    "PURPLE",
+                    "BLUE"
+                ],
+                "1": [
+                    "GREEN",
+                    "BLUE"
+                ],
+                "2": [
+                    "PURPLE",
+                    "GREEN"
+                ],
+                "3": [
+                    "PURPLE",
+                    "GREEN",
+                    "PINK",
+                    "BLUE"
+                ],
+                "4": [
+                    "PURPLE",
+                    "GREEN",
+                    "PINK",
+                    "BLUE"
+                ],
+                "5": [
+                    "PURPLE",
+                    "GREEN",
+                    "PINK",
+                    "BLUE"
+                ],
+                "6": [
+                    "PURPLE",
+                    "BLUE"
+                ],
+                "7": [
+                    "PURPLE",
+                    "GREEN",
+                    "PINK",
+                    "BLUE"
+                ]
             }
         }
     }

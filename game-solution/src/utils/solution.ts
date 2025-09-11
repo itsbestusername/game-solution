@@ -15,4 +15,8 @@ export function stepFlasksToArray(step: Step): string[][] {
         .map(([, segments]) => segments)
 }
 
+export function stepFlaskLabels(step: Step): string[] {
+    return Object.keys(step.flasks).sort((a, b) => Number(a) - Number(b))
+}
+
 
