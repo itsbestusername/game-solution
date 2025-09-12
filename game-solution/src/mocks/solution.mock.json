@@ -6,40 +6,39 @@
             "move": null,
             "flasks": {
                 "0": [
-                    "PINK",
-                    "PURPLE",
-                    "BLUE",
-                    "GREEN"
+                    "RHOMBUS",
+                    "SQUARE"
                 ],
                 "1": [
-                    "GREEN",
-                    "BLUE"
+                    "CIRCLE",
+                    "DROP",
+                    "HEART"
                 ],
                 "2": [
-                    "PURPLE",
-                    "GREEN"
+                    "ARROW",
+                    "CIRCLE",
+                    "DROP",
+                    "HEART"
                 ],
                 "3": [
-                    "PURPLE",
-                    "GREEN",
-                    "PINK",
-                    "BLUE"
+                    "RHOMBUS",
+                    "SQUARE",
+                    "STAR",
+                    "TRIANGLE"
                 ],
                 "4": [
-                    "PINK",
-                    "BLUE"
+                    "SQUARE",
+                    "STAR"
                 ],
                 "5": [
-                    "PURPLE",
-                    "GREEN",
-                    "PINK",
-                    "BLUE"
+                    "MYSTERY",
+                    "PAUSE",
+                    "PENTAGON",
+                    "PLUS"
                 ],
                 "6": [
-                    "PURPLE",
-                    "GREEN",
-                    "PINK",
-                    "BLUE"
+                    "RHOMBUS",
+                    "SQUARE"
                 ],
                 "7": []
             }
@@ -49,48 +48,43 @@
             "move": null,
             "flasks": {
                 "0": [
-                    "PINK",
-                    "GREEN"
+                    "RHOMBUS",
+                    "SQUARE"
                 ],
                 "1": [
-                    "GREEN",
-                    "BLUE",
-                    "PINK",
-                    "GREEN"
+                    "CIRCLE",
+                    "DROP",
+                    "HEART"
                 ],
                 "2": [
-                    "PURPLE",
-                    "GREEN"
+                    "ARROW",
+                    "CIRCLE",
+                    "DROP",
+                    "HEART"
                 ],
                 "3": [
-                    "PURPLE",
-                    "PINK",
-                    "BLUE"
+                    "RHOMBUS",
+                    "SQUARE",
+                    "STAR",
+                    "TRIANGLE"
                 ],
                 "4": [
-                    "PURPLE",
-                    "GREEN",
-                    "PINK",
-                    "BLUE"
+                    "SQUARE",
+                    "STAR"
                 ],
                 "5": [
-                    "PURPLE",
-                    "GREEN",
-                    "PINK",
-                    "BLUE"
+                    "MYSTERY",
+                    "PAUSE",
+                    "PENTAGON",
+                    "PLUS"
                 ],
                 "6": [
-                    "PURPLE",
-                    "GREEN",
-                    "PINK",
-                    "BLUE"
+                    "RHOMBUS",
+                    "SQUARE",
+                    "DROP",
+                    "HEART"
                 ],
-                "7": [
-                    "PURPLE",
-                    "GREEN",
-                    "PINK",
-                    "BLUE"
-                ]
+                "7": []
             }
         },
         "step_2": {
@@ -98,46 +92,43 @@
             "move": null,
             "flasks": {
                 "0": [
-                    "PINK",
-                    "PURPLE",
-                    "BLUE"
+                    "RHOMBUS",
+                    "SQUARE",
+                    "DROP",
+                    "HEART"
                 ],
                 "1": [
-                    "GREEN",
-                    "BLUE"
+                    "CIRCLE",
+                    "DROP",
+                    "HEART"
                 ],
                 "2": [
-                    "PURPLE",
-                    "GREEN"
+                    "ARROW",
+                    "CIRCLE",
+                    "DROP",
+                    "HEART"
                 ],
                 "3": [
-                    "PURPLE",
-                    "GREEN",
-                    "PINK",
-                    "BLUE"
+                    "RHOMBUS",
+                    "SQUARE",
+                    "STAR",
+                    "TRIANGLE"
                 ],
                 "4": [
-                    "PURPLE",
-                    "GREEN",
-                    "PINK",
-                    "BLUE"
+                    "SQUARE",
+                    "STAR"
                 ],
                 "5": [
-                    "PURPLE",
-                    "GREEN",
-                    "PINK",
-                    "BLUE"
+                    "MYSTERY",
+                    "PAUSE",
+                    "PENTAGON",
+                    "PLUS"
                 ],
                 "6": [
-                    "PURPLE",
-                    "BLUE"
+                    "RHOMBUS",
+                    "SQUARE"
                 ],
-                "7": [
-                    "PURPLE",
-                    "GREEN",
-                    "PINK",
-                    "BLUE"
-                ]
+                "7": []
             }
         }
     }
