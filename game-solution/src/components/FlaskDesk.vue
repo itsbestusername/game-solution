@@ -41,4 +41,37 @@ export default {
     margin-bottom: 6px;
     font-size: 12px;
 }
+
+/* Адаптивность для планшетов */
+@media (max-width: 768px) {
+    .flask-desk {
+        gap: 8px;
+    }
+    .flask-label {
+        font-size: 10px;
+        margin-bottom: 4px;
+    }
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 480px) {
+    .flask-desk {
+        gap: 6px;
+    }
+    .flask-label {
+        font-size: 9px;
+        margin-bottom: 3px;
+    }
+}
+
+/* Адаптивность для очень маленьких экранов */
+@media (max-width: 360px) {
+    .flask-desk {
+        gap: 4px;
+    }
+    .flask-label {
+        font-size: 8px;
+        margin-bottom: 2px;
+    }
+}
 </style>

@@ -2,12 +2,14 @@
     "steps": 3,
     "solution": {
         "step_0": {
-            "title": "Шаг 1: Начальное состояние",
+            "title": "Начальное состояние",
             "move": null,
             "flasks": {
                 "0": [
                     "RHOMBUS",
-                    "SQUARE"
+                    "SQUARE",
+                    "CIRCLE",
+                    "DROP"
                 ],
                 "1": [
                     "CIRCLE",
@@ -21,10 +23,9 @@
                     "HEART"
                 ],
                 "3": [
-                    "RHOMBUS",
-                    "SQUARE",
                     "STAR",
-                    "TRIANGLE"
+                    "SQUARE",
+                    "RHOMBUS"
                 ],
                 "4": [
                     "SQUARE",
@@ -44,12 +45,14 @@
             }
         },
         "step_1": {
-            "title": "Шаг 2",
+            "title": "Колба 1 -> Колба 8",
             "move": null,
             "flasks": {
                 "0": [
                     "RHOMBUS",
-                    "SQUARE"
+                    "SQUARE",
+                    "CIRCLE",
+                    "DROP"
                 ],
                 "1": [
                     "CIRCLE",
@@ -63,10 +66,9 @@
                     "HEART"
                 ],
                 "3": [
-                    "RHOMBUS",
-                    "SQUARE",
                     "STAR",
-                    "TRIANGLE"
+                    "SQUARE",
+                    "RHOMBUS"
                 ],
                 "4": [
                     "SQUARE",
@@ -79,23 +81,22 @@
                     "PLUS"
                 ],
                 "6": [
-                    "RHOMBUS",
-                    "SQUARE",
-                    "DROP",
-                    "HEART"
+                    "RHOMBUS"
                 ],
-                "7": []
+                "7": [
+                    "SQUARE"
+                ]
             }
         },
         "step_2": {
-            "title": "Шаг 3",
+            "title": "Колба 3 -> Колба 5",
             "move": null,
             "flasks": {
                 "0": [
                     "RHOMBUS",
                     "SQUARE",
-                    "DROP",
-                    "HEART"
+                    "CIRCLE",
+                    "DROP"
                 ],
                 "1": [
                     "CIRCLE",
@@ -109,10 +110,8 @@
                     "HEART"
                 ],
                 "3": [
-                    "RHOMBUS",
-                    "SQUARE",
                     "STAR",
-                    "TRIANGLE"
+                    "SQUARE"
                 ],
                 "4": [
                     "SQUARE",
@@ -126,9 +125,11 @@
                 ],
                 "6": [
                     "RHOMBUS",
-                    "SQUARE"
+                    "RHOMBUS"
                 ],
-                "7": []
+                "7": [
+                    "SQUARE"
+                ]
             }
         }
     }
