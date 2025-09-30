@@ -1,0 +1,5 @@
+Options -MultiViews
+RewriteEngine Off
+Options -Indexes
+AddType application/javascript .js
+AddType text/css .css

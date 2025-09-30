@@ -1,6 +1,6 @@
 <template>
     <div class="app">
-        <bot-link />
+        <bot-link class="bot-link"/>
         <h1>Загрузи фото головоломки и получи пошаговое решение</h1>
         <add-photo @solution-received="handleSolution" />
         <flask-player class="flask-desk" :capacity="4" :solution-data="solutionData" />
@@ -52,7 +52,6 @@ export default {
     font-weight: 600;
     margin: 0;
 }
-
 .flask-desk {
     width: 90%;
     height: 50%;
