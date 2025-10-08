@@ -45,8 +45,13 @@
             }
         },
         "step_1": {
-            "title": "Колба 1 -> Колба 8",
-            "move": null,
+            "title": "Колба 7 -> Колба 8",
+            "move": {
+                "from": "7",
+                "to": "8",
+                "count": 1,
+                "element": "SQUARE"
+            },
             "flasks": {
                 "0": [
                     "RHOMBUS",
@@ -89,8 +94,13 @@
             }
         },
         "step_2": {
-            "title": "Колба 3 -> Колба 5",
-            "move": null,
+            "title": "Колба 4 -> Колба 7",
+            "move": {
+                "from": "4",
+                "to": "7",
+                "count": 1,
+                "element": "RHOMBUS"
+            },
             "flasks": {
                 "0": [
                     "RHOMBUS",

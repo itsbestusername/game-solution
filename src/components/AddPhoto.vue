@@ -1,8 +1,15 @@
 <template>
     <div class="add-photo">
         <my-button class="button" @click="openFileDialog" :disabled="isUploading">
-            <span v-if="!isUploading">Загрузить</span>
-            <div v-else class="spinner"></div>
+            <template v-if="!isUploading">
+                <span class="button-text">Загрузить</span>
+            </template>
+            <template v-else>
+                <div class="loading-content">
+                    <span class="button-text-loading">Поиск решения. Подождите</span>
+                    <div class="spinner"></div>
+                </div>
+            </template>
         </my-button>
         <input ref="photoInput" type="file" accept="image/*" @change="onFileChange" style="display: none;" />
         <div v-if="error" class="error">{{ error }}</div>
@@ -35,12 +42,17 @@ export default {
                 const formData = new FormData()
                 formData.append('file', file)
 
-                const response = await fetch('/api/solve-file', {
+                // Используем прокси для обхода SSL проблем
+                const uploadEndpoint = import.meta.env.VITE_UPLOAD_ENDPOINT || './proxy.php'
+                
+                let response = await fetch(uploadEndpoint, {
                     method: 'POST',
                     body: formData
                 })
 
                 if (!response.ok) {
+                    const errorText = await response.text()
+                    console.error('Response error:', errorText)
                     throw new Error(`HTTP ${response.status}: ${response.statusText}`)
                 }
 
@@ -63,14 +75,31 @@ export default {
 <style scoped>
 .add-photo {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 12px;
 }
 .button {
-    width: 150px;
+    min-width: 200px;
+    min-height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
+}
+.button-text {
+    font-size: 18px;
+    font-weight: 400;
+}
+.button-text-loading {
+    font-size: 14px;
+    font-weight: 400;
+}
+.loading-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 .spinner {
     width: 16px;
@@ -81,8 +110,12 @@ export default {
     animation: spin 1s linear infinite;
 }
 .error {
-    margin-left: 12px;
     color: #ff6b6b;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    max-width: 80vw;
+    word-wrap: break-word;
 }
 @keyframes spin {
     from { transform: rotate(0deg); }
