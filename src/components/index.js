@@ -4,6 +4,7 @@ import FlaskDesk from './FlaskDesk.vue'
 import AddPhoto from './AddPhoto.vue'
 import FlaskPlayer from './FlaskPlayer.vue'
 import BotLink from './BotLink.vue'
+import ErrorModal from './ErrorModal.vue'
 
 export default [
     MyButton,
@@ -11,5 +12,6 @@ export default [
     FlaskDesk,
     AddPhoto,
     FlaskPlayer,
-    BotLink
+    BotLink,
+    ErrorModal
 ]

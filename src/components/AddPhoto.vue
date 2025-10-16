@@ -42,8 +42,10 @@ export default {
                 const formData = new FormData()
                 formData.append('file', file)
 
-                // Используем прокси для обхода SSL проблем
-                const uploadEndpoint = import.meta.env.VITE_UPLOAD_ENDPOINT || './proxy.php'
+                // В режиме разработки используем Vite прокси, в продакшене - proxy.php
+                const uploadEndpoint = import.meta.env.DEV 
+                    ? '/api/solve-file' 
+                    : './proxy.php'
                 
                 let response = await fetch(uploadEndpoint, {
                     method: 'POST',
@@ -53,7 +55,32 @@ export default {
                 if (!response.ok) {
                     const errorText = await response.text()
                     console.error('Response error:', errorText)
-                    throw new Error(`HTTP ${response.status}: ${response.statusText}`)
+                    
+                    // Проверяем, является ли это ошибкой 503 с session_id
+                    if (response.status === 503) {
+                        try {
+                            const errorData = JSON.parse(errorText)
+                            if (errorData.detail && errorData.detail.session_id) {
+                                // Эмитим событие с данными ошибки 503
+                                this.$emit('error-503', {
+                                    sessionId: errorData.detail.session_id,
+                                    error: errorData.detail.error || 'Не удалось решить головоломку',
+                                    errorCode: 503
+                                })
+                                return
+                            }
+                        } catch (parseError) {
+                            console.error('Ошибка парсинга ответа 503:', parseError)
+                        }
+                    }
+                    
+                    // Для других ошибок также показываем модальное окно
+                    this.$emit('error-503', {
+                        sessionId: `error_${Date.now()}`,
+                        error: `Ошибка сервера: ${response.status} ${response.statusText}`,
+                        errorCode: response.status
+                    })
+                    return
                 }
 
                 const result = await response.json()
@@ -64,7 +91,13 @@ export default {
 
             } catch (err) {
                 console.error('Ошибка загрузки:', err)
-                this.error = err.message || 'Ошибка загрузки файла'
+                
+                // Показываем модальное окно для любых ошибок
+                this.$emit('error-503', {
+                    sessionId: `network_error_${Date.now()}`,
+                    error: err.message || 'Ошибка загрузки файла',
+                    errorCode: null
+                })
             } finally {
                 this.isUploading = false
             }

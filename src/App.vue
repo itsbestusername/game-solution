@@ -3,24 +3,51 @@
         <bot-link class="bot-link"/>
         <h1>Загрузи фото головоломки и получи пошаговое решение</h1>
         <h3 class="description">Решаем головоломки любого уровня. Если в головоломке есть знаки вопроса - сначала раскрываем их. Когда все знаки вопроса раскрыты - решаем. После раскрытия знаков вопроса, сделайте еще один скриншот и загрузите повторно</h3>
-        <add-photo @solution-received="handleSolution" />
+        <add-photo @solution-received="handleSolution" @error-503="handleError503" />
         <flask-player class="flask-desk" :capacity="4" :solution-data="solutionData" />
         <div class="layout"></div>
+        
+        <!-- Модальное окно ошибки -->
+        <error-modal 
+            :is-visible="showErrorModal" 
+            :session-id="errorSessionId"
+            :error-code="errorCode"
+            @close="closeErrorModal" 
+        />
     </div>
     
 </template>
 
 <script>
+import ErrorModal from './components/ErrorModal.vue'
+
 export default {
+    components: {
+        ErrorModal
+    },
     data() {
         return {
-            solutionData: null
+            solutionData: null,
+            showErrorModal: false,
+            errorSessionId: '',
+            errorCode: null
         }
     },
     methods: {
         handleSolution(solution) {
             console.log('Решение получено в App:', solution)
             this.solutionData = solution
+        },
+        handleError503(errorData) {
+            console.log('Ошибка получена в App:', errorData)
+            this.errorSessionId = errorData.sessionId
+            this.errorCode = errorData.errorCode
+            this.showErrorModal = true
+        },
+        closeErrorModal() {
+            this.showErrorModal = false
+            this.errorSessionId = ''
+            this.errorCode = null
         }
     }
 }
